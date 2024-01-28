@@ -1,0 +1,26 @@
+@import '../../scss/variables';
+
+$width: 100px;
+
+$height: 40px;
+
+$radius: 40px;
+
+.button {
+  text-align: center;
+  height: $height;
+  width: $width;
+  border-radius: $radius;
+  background: transparent;
+  border: 2px solid $green;
+  color: $green;
+  transition: all 0.25s ease;
+  font-size: 1.25rem;
+  &:hover {
+    color:white;
+    background: $green;
+  }
+  &:active {
+    letter-spacing: 2px;
+  }
+}

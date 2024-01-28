@@ -1,0 +1,77 @@
+@import '../../scss/variables';
+
+$animation-timing: 350ms;
+$spacing: 5px;
+
+
+.navigation {
+  padding: $padding-s 0;
+  background-color: $primary-dark;
+  
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80vw;
+    margin-inline: auto;   
+  } 
+
+
+  &__link {
+    display: block;
+    padding: $padding-xs;
+    font-size: clamp($font-14, 2.2vw , $font-22);
+    color: $color-dark;
+    transition: letter-spacing $animation-timing ease-in-out;
+  
+    &:hover,
+    &:active {
+      letter-spacing: $spacing;
+    } 
+  }  
+}
+
+.navigation__item {
+  &:before,
+  &:after {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all $animation-timing ease-in-out;
+    width: 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width $animation-timing ease-in-out;
+    width: 100%;
+  }
+
+  &:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    padding-block: $padding-s;
+  }
+
+  .navigation__link {
+    padding: $padding-s;
+  }
+}
+
+@media (min-width: 1440px) {
+  .navigation {
+    padding-block: $padding-m
+  }
+}
+

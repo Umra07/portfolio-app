@@ -1,0 +1,14 @@
+@import './fonts';
+@import './variables';
+
+.app {
+  font-family: 'DM Sans', sans-serif;
+  background-color: $secondary-dark;
+  color: $color-dark;
+}
+
+@media (min-width: 1024px) {
+  .app {
+    height: 100vh;
+  }
+}
