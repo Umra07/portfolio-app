@@ -1,0 +1,91 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+.form {
+  order: 2;
+  @include flex-col($distance-m);
+  border: $border;
+  border-top: none;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  padding: $distance-m $distance-s;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__input, &__textarea {
+    outline: none;
+    padding: $distance-s;
+    border: none;
+    background-color: transparent;
+    border-bottom: 3px solid $color-secondary;
+    font-size: 1.25rem;
+    color: $color-dark;
+
+    &:hover {
+      border-bottom: 3px solid #fff;
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 1.25rem;
+    }
+
+    &:focus {
+      border-bottom: 3px solid #fff;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  &__submit {
+    padding-block: $distance-s;
+    background-color: transparent;
+    font-weight: 600;
+    border: 3px solid #fff;
+    transition: background-color 150ms ease-in-out,
+    color 150ms ease-in-out;
+    cursor: pointer;
+  
+  }
+}
+
+.form--light .form__input:hover, .form--light .form__textarea:hover,
+.form--light .form__input:focus, .form--light .form__textarea:focus {
+  border-color: $accent-light;
+  color: $color-light;
+}
+
+.form--light .form__submit {
+  border-color: $accent-light;
+  color: $accent-light;
+
+  &:hover {
+    background-color: $accent-light;
+    color: #fff;
+  }
+} 
+
+.form--dark .form__submit {
+  border-color: #fff;
+  color: $color-dark;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+    flex: 1;
+    border: $border;
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: $radius;
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.contact {
+  display: flex;
+
+  &__content {
+    flex: 7;
+    padding: $distance-m $distance-s;
+    display: flex;
+    flex-direction: column;
+    gap: $distance-m;
+  }
+
+  &__top {
+    @include flex-col(0);
+  }
+
+  &__img {
+    order: 1;
+    height: 300px;    
+    background-color: aqua;
+  }
+
+}
+
+@media(min-width: 768px) {
+  .contact {
+    &__content {
+      padding: $distance-xl;
+    }
+    &__top {
+      flex-direction: row;
+    }
+
+    &__img {
+      flex: 1;
+      height: 100%;
+      order: 2;
+    }
+  }
+}
