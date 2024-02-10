@@ -1,0 +1,60 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+$radius: 15px;
+
+.skills {
+  
+  &__list {
+    padding-block: $distance-m;
+    @include flex-col-center($distance-m);
+  }
+
+  &__card {
+    padding: $distance-xl;
+    border: $border;
+    border-radius: $radius;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform .15s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    } 
+  }
+}
+
+.list-wrapper {
+  flex: 7;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .skills__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: repeat(3, 1fr);
+    justify-content: center;
+    gap: $distance-s;
+    padding-inline: $distance-m;
+  }
+
+  .skills__card {
+    padding: $distance-s;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills__list {
+    padding: $distance-xl;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: $distance-m;
+  }
+
+  .skills__card {
+    padding: $distance-m;
+  }
+}

@@ -1,15 +1,14 @@
 @import '../../scss/variables';
 
-$width: 100px;
+// $width: 100px;
 
-$height: 40px;
+// $height: 40px;
 
 $radius: 40px;
 
 .button {
+  padding: $distance-s;
   text-align: center;
-  height: $height;
-  width: $width;
   border-radius: $radius;
   background: transparent;
   border: 2px solid $green;
@@ -21,6 +20,6 @@ $radius: 40px;
     background: $green;
   }
   &:active {
-    letter-spacing: 2px;
+    transform: scale(1.1);
   }
 }

@@ -1,0 +1,84 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+$gap: 20px;
+
+.carousel {
+  flex: 4;
+  @include flex-col($distance-m);
+  height: inherit;
+  padding-bottom: 30px;
+
+  &__item {
+    flex: 1;
+    // padding: $distance-m;
+    @include flex-col($gap);
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    margin-top: $distance-m;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &__info {
+    @include flex-col($gap);
+    padding: $distance-m;
+    margin-inline: 30px;
+    border: $border;
+    border-radius: 15px;
+  }
+
+  &__heading {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: .85rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    color: $green;
+    transition: text-decoration 150ms ease-in-out;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    font-size: .9rem;
+    height: 30px;
+    width: 60px;
+  }
+
+  &__buttons {
+    align-self: flex-end;
+    padding-inline: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel__images {
+    flex-direction: row;
+  }
+
+  .carousel__img {
+    width: 50%;
+  }
+}

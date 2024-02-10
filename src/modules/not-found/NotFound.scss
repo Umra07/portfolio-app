@@ -1,0 +1,67 @@
+@import '../../scss/variables';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  gap: $distance-m;
+
+  &__content-wrapper {
+    flex: 7;
+    display: grid;
+    place-items: center;
+    gap: $distance-m;
+  }
+
+  &__content {
+    padding: $distance-m;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $distance-m;
+    // border: $border;
+    border-radius: $radius;
+    box-shadow: 8px 8px 37px -16px rgba(136, 136, 136, 1);
+  }
+
+  &__image {
+    width: 200px;
+    height: 200px;
+    background-color: violet;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__text {
+    color: $error;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $distance-m
+  }
+}
+
+.error .heading {
+  flex: 1;
+}
+
+.error--light .heading {
+  background-color: $primary-light;
+  color: $color-light;
+}
+
+.error--dark .heading {
+  background-color: $primary-dark;
+  color: $color-dark;
+}
+
+@media (min-width: 768px) {
+  .error {
+  height: 100vh;
+  flex-direction: row;
+  gap: 0;
+  }
+}

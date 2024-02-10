@@ -1,0 +1,65 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+$img-width: 260px;
+$img-height: 260px;
+
+$gap: 20px;
+$radius: 40px;
+
+.author {  
+  @include flex-col-center($gap);
+  gap: 2rem;
+  
+  &__wrapper {
+    margin-bottom: $distance-m;
+    padding: $distance-m;
+    flex: 2;
+  }
+  
+  &__img {
+    background-color: red;
+    width: $img-height;
+    height: $img-width;
+    border-radius: $rounded;
+  }
+
+  &__info {
+    @include flex-col-center($gap);
+    padding: $distance-m;
+    border: $border;
+    border-radius: $radius;
+    gap: 1.5rem;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  &__button {
+    align-self: flex-end;
+  }
+}
+
+.author__wrapper--light {
+  background-color: $primary-light;
+  color: $color-light;
+}
+
+
+.author__wrapper--dark {
+  background-color: $primary-dark;
+  color: $color-dark;
+}
+
+@media (min-width: 768px) {
+  .author__wrapper {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,105 @@
+@import '../../../scss/variables';
+
+$animation-timing: 350ms;
+$spacing: 5px;
+
+
+.navigation {
+  flex: 3;
+  padding: $distance-m;
+  align-items: center;
+  display: flex;
+  z-index: 2; 
+}
+
+.navigation--light {
+  background-color: $primary-light;
+  // color: $color-light
+}
+
+.navigation--dark {
+  background-color: $primary-dark;
+}
+
+//====================== Hamburger styles ==========================
+
+.hamburger {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 32px;
+  transition: all .15s ease-in-out;
+
+  &__line {
+    width: inherit;
+    height: 4px;
+    background-color: #fff;
+  }
+
+  &__line::before, &__line::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 4px;
+    background-color: #fff;
+    transition: all .15s ease-in-out;
+  }
+
+  &__line::before {
+    top: -10px;
+  }
+
+  &__line::after {
+    top: 10px;
+  }
+}
+
+.hamburger__line--light {
+  background-color: $primary-dark;
+
+  &::before, &::after {
+    background-color: $primary-dark;
+  }
+}
+
+.hamburger__line--active {
+  background-color: rgba(0,0,0,0);
+}
+
+.hamburger__line--active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger__line--active::after {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+//=========================== Media quieries ===========================
+
+@media (min-width: 768px) {
+  .navigation {
+    padding: $distance-s $distance-l;
+    display: block;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+}
+
+
+
+@media (min-width: 1440px) {
+  .navigation {
+    padding-block: $distance-m;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navigation {
+    padding-inline: $distance-xxl;
+  }
+}

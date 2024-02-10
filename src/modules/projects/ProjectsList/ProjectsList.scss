@@ -1,0 +1,46 @@
+@import '../../../scss/variables';
+@import '../../../scss/mixins';
+
+$radius: 15px;
+
+.projects-list {
+  padding: 0 $distance-m $distance-xl;
+  @include flex-col-center($distance-m);
+
+  &__wrapper {
+    flex: 7;
+    display: flex;
+  }
+}
+
+.project-card {
+  border: $border;
+  border-radius: $radius;
+  padding: $distance-s;
+  display: flex;
+  flex-direction: column;
+  gap: $distance-s;
+
+  &__img {
+
+  }
+
+  &__heading {
+    text-align: center;
+  }
+}
+
+.technologies {
+  display: flex;
+  gap: $distance-s;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .projects-list {
+    padding: $distance-m;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: normal;
+  }
+}

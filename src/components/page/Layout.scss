@@ -1,0 +1,33 @@
+@import '../../scss/fonts';
+@import '../../scss/variables';
+
+.layout {
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.layout--light {
+  background-color: $secondary-light;
+  color: $color-light;
+}
+
+.layout--dark {
+  background-color: $secondary-dark;
+  color: $color-dark;
+}
+
+
+.main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    height: 100vh;
+    overflow-x: hidden;
+  }
+}

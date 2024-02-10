@@ -1,0 +1,46 @@
+@import '../../scss/variables';
+
+.heading {
+  flex: 1;
+  display: flex;
+  &__list {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $distance-m;
+    padding-block: $distance-m;
+  }
+
+  &__item {
+    font-size: 1.5rem;
+    cursor: default;
+    transition: transform .15s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.heading--light {
+  background-color: $primary-light;
+}
+
+.heading--dark {
+  background-color: $primary-dark;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    padding: 0;
+  }
+
+  .heading__list {
+    flex-direction: column;
+  }
+
+  .heading__item {
+    font-size: 3rem;
+  }
+}

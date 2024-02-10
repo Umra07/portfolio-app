@@ -1,0 +1,59 @@
+@import '../../../scss/variables';
+
+.socials {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: $border;
+  border-radius: $radius;
+
+  &__heading {
+    display: none;
+  }
+
+  &__links-block {
+    display: flex;
+  }
+
+  &__link {
+    padding: $distance-m;
+    display: block;
+    border-left: $border;
+    transition: background-color 150ms ease-in-out;
+    &:hover {
+      background-color: #fff;
+    }
+
+    &:last-child {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+
+    &:first-child {
+      border-left: none;
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+  }
+}
+
+@media (min-width: 425px) {
+  .socials {
+    margin: 0;
+    justify-content: space-between;
+    padding-left: $distance-m;
+  }
+
+  .socials__heading {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+  }
+
+  .socials__link:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

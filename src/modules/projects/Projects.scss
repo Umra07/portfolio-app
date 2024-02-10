@@ -1,0 +1,13 @@
+@import '../../scss/variables';
+
+.projects {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    flex-direction: row;
+    flex: 1
+  }
+}

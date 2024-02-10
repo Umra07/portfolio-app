@@ -1,0 +1,71 @@
+@import '../../../scss/variables';
+// @import '../../../scss/mixins';
+
+// styling theme switcher wrapper
+
+.theme {
+  // @include theme($primary-bg-day, $clr-day, $border-day);
+
+  align-self: center;
+  background-color: #1f263e;
+  border: 3px solid rgba($color: #fff, $alpha: 0.65);
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+
+  //styling icons
+
+  &__icon {
+    display: grid;
+    place-items: center;
+  }
+
+  &__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  // styling theme switcher button
+
+  &__button {
+    // background-color: $primary-bg-night;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    left: 0;
+    // transition: left 0.25s ease-in-out;
+  }
+}
+
+// Styling themes
+
+.theme--light {
+  background-color: $secondary-light;
+  border-color: $secondary-dark;
+  
+  .theme__button {
+    background-color: $primary-dark;
+  }
+}
+
+.theme--dark {
+  background-color: $secondary-dark;
+}
+
+.theme--dark {
+  // @include theme($primary-bg-night, $clr-night, $border-night);
+
+  .theme__button {
+    left: calc(100% - 25px);
+    // background-color: $primary-bg-day;
+  }
+}

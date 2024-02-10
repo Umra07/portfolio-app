@@ -1,0 +1,80 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+$width-lg: 100px;
+$height-lg: 40px;
+$radius-lg: 15px;
+
+$width-md: 80px;
+$height-md: 30px;
+$radius-md: 10px;
+
+.select {
+  @include flex-col(0);
+  background-color: $primary-dark;
+  border: $border;
+  border-radius: $radius-md;
+  position: absolute;
+  &__wrapper {
+    position: relative;
+  }
+  
+  &__button {
+    @include center;
+    padding: 0;
+    background-color: transparent;
+    color: $color-dark;
+    border: $border;
+    border-radius: $radius;
+    width: $width-md;
+    height: $height-md;
+    cursor: pointer;
+  }
+
+  &__option {
+    @include transition(background-color);
+    padding: $distance-m;
+    cursor: pointer;
+    border-radius: $radius-md;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  // &:hover {
+  //   opacity: .85;
+  // }
+}
+
+// .select--day {
+//   background-color: $action-day-bg;
+//   color: $clr-day;
+// }
+
+// .select--night {
+//   background-color: $action-night-bg;
+//   color: $clr-night;
+// }
+
+
+@media (min-width: 768px) {
+  .select {
+    top: 35px;
+    left: -8px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .select {
+    top: 50px;
+    left: -4px;
+    
+    &__button {
+      width: $width-lg;
+      height: $height-lg;
+      border-radius: $radius-lg;
+    }
+  }
+}

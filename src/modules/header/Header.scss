@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.header {
+  display: flex;
+  &__switchers {
+    flex: 1;
+    background-color: $secondary-dark;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $distance-s;
+    padding-inline: $distance-m;
+  }
+}
+
+.header--light .header__switchers {
+  background-color: $secondary-light;
+}
+
+.header--dark .header__switchers {
+  background-color: $secondary-dark;
+}
+
+@media (min-width: 768px) {
+  .header__switchers {
+    padding-right: $distance-xxl;
+  }
+}
