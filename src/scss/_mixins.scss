@@ -1,0 +1,22 @@
+@mixin flex-col($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flex-col-center($gap) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin transition($property) {
+  transition: $property .15s ease-in-out;
+}
+
+@mixin center {
+  display: grid;
+  place-items: center;
+}

@@ -24,6 +24,11 @@ button {
   cursor: pointer;
 }
 
+textarea {
+  width: auto;
+  height: auto;
+}
+
 @media (min-width: 475px) {
   html {
     font-size: 14px;
