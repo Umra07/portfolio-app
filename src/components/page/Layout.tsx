@@ -8,7 +8,7 @@ export const Layout: FC = () => {
   const { theme } = useContext(ThemeContext) as ThemeContextType;
 
   return (
-    <div className={`layout layout--${theme}`}>
+    <div data-testid="layout" className={`layout layout--${theme}`}>
       <Header />
       <main className="main">
         <Outlet />

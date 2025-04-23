@@ -8,5 +8,5 @@ interface CustomIconProps {
 }
 
 export const CustomIcon: FC<CustomIconProps> = ({ iconName, iconWrapperStyle }) => {
-  return <div className={iconWrapperStyle}>{IconsMap[iconName]}</div>;
+  return <div data-testid="custom-icon" className={iconWrapperStyle}>{IconsMap[iconName]}</div>;
 };

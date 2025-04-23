@@ -10,9 +10,8 @@ export interface OptionType {
 }
 
 interface LanguageSelectorProps {
-  selectedOption?: string;
-  options?: OptionType[];
-  styles?: string;
+  options: OptionType[];
+  selectedOption: string;
   changeSelected: (value: string) => void;
 }
 
@@ -33,12 +32,12 @@ export const CustomSelector: FC<LanguageSelectorProps> = ({
   };
 
   return (
-    <div className="select__wrapper" onClick={toggleMenu}>
-      {selectedOption ? <button className="select__button">{selectedOption}</button> : ''}
+    <div data-testid="select-wrapper" className="select__wrapper" onClick={toggleMenu}>
+      {selectedOption ? <span data-testid="selected-option" className="select__button">{selectedOption}</span> : ''}
       {showMenu ? (
         <ul className={`select ${showMenu ? 'select--active' : ''}`}>
-          {options?.map((option) => (
-            <li className="select__option" onClick={() => handleOptionClick(option.name)}>
+          {options.map((option) => (
+            <li key={option.value} className="select__option" onClick={() => handleOptionClick(option.name)}>
               {option.name}
             </li>
           ))}

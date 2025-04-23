@@ -7,5 +7,5 @@ interface SectionWrapperProps {
 }
 
 export const SectionWrapper: FC<SectionWrapperProps> = ({ children, styles }) => {
-  return <div className={`wrapper ${styles ? styles : ''}`}>{children}</div>;
+  return <div data-testid="section-wrapper" className={`wrapper ${styles ? styles : ''}`}>{children}</div>;
 };
